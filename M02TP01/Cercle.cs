@@ -7,10 +7,7 @@ using System.Threading.Tasks;
 namespace M02TP01
 {
     public class Cercle : Forme
-    {
-        public Cercle()
-        {
-            int Rayon();
-        }
+    { 
+        public int Rayon { get; set; }
     }
 }

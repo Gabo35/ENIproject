@@ -8,6 +8,6 @@ namespace M02TP01
 {
     public abstract class Forme
     {
-        int Rayon();
+        
     }
 }

@@ -8,5 +8,6 @@ namespace M02TP01
 {
     internal class Carre : Forme
     {
+        public int Longueur { get; set; }
     }
 }
