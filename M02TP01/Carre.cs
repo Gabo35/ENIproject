@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace M02TP01
 {
-    internal class Carre : Forme
+    internal class Carre : Rectangle
     {
-        public int Longueur { get; set; }
+        public override int Largeur { get => base.Longueur; set => base.Longueur = value; }
+
+        public override string ToString()
+        {
+            return $"Carré de côté ={Largeur}\n{base.ToString()}";
+        }
     }
 }
