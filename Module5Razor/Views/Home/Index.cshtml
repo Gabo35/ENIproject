@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@* bonjour je suis un commentaire en razor*@
+
+<!-- commentaire en html -->
+
+@{
+    int i = 1337;
+    var mots = new List<string>() { "coucou", "yann", "purdey","tara"}
+}
+
+@foreach(var mot in mots)
+{
+    <p>@mot</p>
+}
+
+<p>Valeur de la variable : @(i + 100)</p>
+
+@if (i == 5)
+{
+    <p>Elle vaut 5</p>
+}
+else
+{
+    <p>Elle ne vaut pas 5</p>
+}
+
+@for (int x=0; x< 10; x++)
+{
+    <p>Bonjour @(x)!</p>
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
