@@ -28,6 +28,7 @@ namespace EscapeGame.Controllers
             return View();
         }
         
+
         public IActionResult Fin(int v1, int v2)
         {
             ViewBag.Valeur = v1 * v2;

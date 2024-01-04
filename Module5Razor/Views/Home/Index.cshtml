@@ -8,12 +8,12 @@
 
 @{
     int i = 1337;
-    var mots = new List<string>() { "coucou", "yann", "purdey","tara"}
+    var mots = new List<string>() { "coucou", "yann", "purdey", "tara" };
 }
 
-@foreach(var mot in mots)
+@foreach(var item in mots)
 {
-    <p>@mot</p>
+    <p>@item</p>
 }
 
 <p>Valeur de la variable : @(i + 100)</p>
