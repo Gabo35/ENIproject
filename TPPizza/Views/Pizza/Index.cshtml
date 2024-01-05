@@ -1,14 +1,14 @@
-﻿@model IEnumerable<TPChats.Models.Chat>
+﻿@model IEnumerable<BO.Pizza>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Liste des Pizza";
 }
 
-<h1>Index</h1>
+<h1>ListePizza</h1>
 
-@* <p>
+<p>
     <a asp-action="Create">Create New</a>
-</p> *@
+</p>
 <table class="table">
     <thead>
         <tr>
@@ -19,10 +19,10 @@
                 @Html.DisplayNameFor(model => model.Nom)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Age)
+                @Html.DisplayNameFor(model => model.Pate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Couleur)
+                @Html.DisplayNameFor(model => model.Ingredients)
             </th>
             <th></th>
         </tr>
@@ -33,17 +33,25 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.Nom)
             </td>
+
             <td>
-                @Html.DisplayFor(modelItem => item.Age)
+                @Html.DisplayFor(modelItem => item.Pate.Nom)
             </td>
+
+                <td>
+                @* @Html.DisplayFor(modelItem => item.Ingredients) *@
+                @foreach (var ingredients in item.Ingredients)
+                {
+                    <li>@ingredients.Nom</li>
+                }
+                </td>
+                
             <td>
-                @Html.DisplayFor(modelItem => item.Couleur)
-            </td>
-            <td>
-                @* @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) | *@
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>

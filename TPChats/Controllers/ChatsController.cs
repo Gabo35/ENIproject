@@ -15,7 +15,8 @@ namespace TPChats.Controllers
         // GET: ChatsController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var chat = id;
+            return View(chat);
         }
 
         // GET: ChatsController/Create
