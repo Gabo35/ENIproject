@@ -15,7 +15,8 @@ namespace TPChats.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var chats = Chat.GetMeuteDeChats();
+            return View(chats);
         }
 
         public IActionResult Privacy()
