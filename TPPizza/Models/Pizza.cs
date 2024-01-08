@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.Infrastructure;
+using System.Collections.Generic;
 
 namespace BO
 {
@@ -26,5 +27,6 @@ namespace BO
             new Pate{ Id=3,Nom="Pate épaisse, base crême"},
             new Pate{ Id=4,Nom="Pate épaisse, base tomate"}
         };
-}
+
+    }
 }

@@ -1,7 +1,14 @@
 ﻿using BO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.CodeAnalysis;
 using System;
+using System.Collections.Generic;
+using System.Drawing.Text;
+using System.Linq;
+using System.Reflection;
+using TPPizza.Models;
 
 namespace TPPizza.Controllers
 {
@@ -20,13 +27,12 @@ namespace TPPizza.Controllers
                     Pizza.IngredientsDisponibles[7]
                 }
             },
-            new Pizza{ Id=1,Nom="Ocean",
+            new Pizza{ Id=2,Nom="Ocean",
                 Pate=Pizza.PatesDisponibles[1],
                 Ingredients=new List<Ingredient>
                 {
                     Pizza.IngredientsDisponibles[0],
                     Pizza.IngredientsDisponibles[5],
-                    Pizza.IngredientsDisponibles[7]
                 }
             }
         };
@@ -41,7 +47,9 @@ namespace TPPizza.Controllers
         // GET: PizzaController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            Pizza? pizza = menu.FirstOrDefault(c => c.Id == id);
+            if (pizza == null) return NotFound();
+            return View(pizza);
         }
 
         // GET: PizzaController/Create
@@ -68,16 +76,26 @@ namespace TPPizza.Controllers
         // GET: PizzaController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            Pizza? pizza = menu.FirstOrDefault(c => c.Id == id);
+            if (pizza == null) return NotFound();
+
+            ViewBag.PateList = Pizza.PatesDisponibles.ToList();
+            ViewBag.SelectedPate = pizza.Pate.Nom;
+
+            return View(pizza);
         }
 
         // POST: PizzaController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Pizza pizzaForm)
         {
             try
             {
+                int pizzaBddIndex = menu.FindIndex(x => x.Id == id);
+                if (pizzaBddIndex == -1) return NotFound();
+                menu[pizzaBddIndex].Nom = pizzaForm.Nom;
+                menu[pizzaBddIndex].Pate = pizzaForm.Pate;
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -89,7 +107,9 @@ namespace TPPizza.Controllers
         // GET: PizzaController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Pizza? pizza = menu.FirstOrDefault(c => c.Id == id);
+            if (pizza == null) return NotFound();
+            return View(pizza);
         }
 
         // POST: PizzaController/Delete/5
@@ -99,6 +119,9 @@ namespace TPPizza.Controllers
         {
             try
             {
+                Pizza? pizza = menu.FirstOrDefault(c => c.Id == id);
+                if (pizza == null) return NotFound();
+                menu.Remove(pizza);
                 return RedirectToAction(nameof(Index));
             }
             catch
