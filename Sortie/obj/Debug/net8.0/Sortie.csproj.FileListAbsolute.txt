@@ -1,0 +1,15 @@
+D:\ENIproject\Sortie\bin\Debug\net8.0\Sortie.exe
+D:\ENIproject\Sortie\bin\Debug\net8.0\Sortie.deps.json
+D:\ENIproject\Sortie\bin\Debug\net8.0\Sortie.runtimeconfig.json
+D:\ENIproject\Sortie\bin\Debug\net8.0\Sortie.dll
+D:\ENIproject\Sortie\bin\Debug\net8.0\Sortie.pdb
+D:\ENIproject\Sortie\obj\Debug\net8.0\Sortie.GeneratedMSBuildEditorConfig.editorconfig
+D:\ENIproject\Sortie\obj\Debug\net8.0\Sortie.AssemblyInfoInputs.cache
+D:\ENIproject\Sortie\obj\Debug\net8.0\Sortie.AssemblyInfo.cs
+D:\ENIproject\Sortie\obj\Debug\net8.0\Sortie.csproj.CoreCompileInputs.cache
+D:\ENIproject\Sortie\obj\Debug\net8.0\Sortie.sourcelink.json
+D:\ENIproject\Sortie\obj\Debug\net8.0\Sortie.dll
+D:\ENIproject\Sortie\obj\Debug\net8.0\refint\Sortie.dll
+D:\ENIproject\Sortie\obj\Debug\net8.0\Sortie.pdb
+D:\ENIproject\Sortie\obj\Debug\net8.0\Sortie.genruntimeconfig.cache
+D:\ENIproject\Sortie\obj\Debug\net8.0\ref\Sortie.dll
